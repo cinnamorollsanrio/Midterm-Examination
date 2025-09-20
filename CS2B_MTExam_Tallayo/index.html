@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- makes page fit phone screen also -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ilocos Sur | Home</title>
+
+  <!-- connect our css design -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- i added a font from google bcs its not available here -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+
+  <!-- Header bar on top -->
+  <header>
+    <!-- logo part on the left -->
+    <div class="logo">
+      <!-- link back to homepage when you click the logo -->
+      <a href="index.html">
+        <img src="assets/logo.png" alt="Ilocos Sur Logo">
+      </a>
+      <h1 class="logo-text">Ilocos Sur</h1>
+    </div>
+
+    <!-- navigation links on the right -->
+    <nav>
+      <!-- 
+        class="active" means this link is the page you are on now 
+        so CSS can make it a different color.
+        data-tooltip is text that shows when you hover.
+        In your CSS you use a::after {content: attr(data-tooltip)} 
+        so no JS needed, it just shows that text on hover.
+      -->
+      <a href="index.html" class="active" data-tooltip="Go back to Home Page">Home</a>
+      <a href="contact.html" data-tooltip="Contact us for more info">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section with video background -->
+  <section class="hero">
+    <!-- 
+      video autoplay plays it right away
+      muted means no sound
+      loop means it repeats
+      playsinline allows it to play on phones inside the page
+      poster shows image if video not loaded
+    -->
+    <video class="header-video" autoplay muted loop playsinline poster="assets/ilocossurvigan.mp4.bz2">
+      <source src="assets/ilocossurvigan.mp4.bz2" type="video/mp4">
+    </video>
+    <!-- text overlay on top of video -->
+    <p>Explore heritage, nature, and local products all in one journey.</p>
+  </section>
+
+  <!-- Section 1: Tourist Spots -->
+  <section>
+    <h2>Tourist Spots & Adventures</h2>
+
+    <!-- grid of 3 cards using CSS grid -->
+    <div class="tourist-grid">
+      <!-- one tourist card -->
+      <div class="tourist-card">
+        <img src="assets/pinsal.jpg" alt="Pinsal Falls">
+        <h3>Pinsal Falls</h3>
+        <p>Pinsal Falls is the largest waterfall in Ilocos Sur, located in the town of Sta. Maria. Its twin cascades create natural pools perfect for swimming and relaxation. Surrounded by lush greenery, it’s a top destination for nature lovers.</p>
+        <p>#PinsalFalls #Adventure #Nature #IlocosSur #Waterfalls</p>
+      </div>
+
+      <div class="tourist-card">
+        <img src="assets/callecrisologo.jpg" alt="Calle Crisologo">
+        <h3>Calle Crisologo</h3>
+        <p>Known for its old-world charm, shops, and horse-drawn carriages. Experience authentic Ilocano traditions. A must-see for every visitor.</p>
+        <p>#CalleCrisologo #Antiques #IlocosSur #Travel #Tradition</p>
+      </div>
+
+      <div class="tourist-card">
+        <img src="assets/cabugao.jpg" alt=" Cabugao Beach Cove">
+        <h3>Cabugao Beach Cove</h3>
+        <p>A white-sand paradise in the town of Cabugao, perfect for swimming and camping. The cove offers crystal-clear waters, stunning views, and relaxing vibes. It’s an ideal destination for family outings and beach lovers.</p>
+        <p>#CabugaoBeach #WhiteSand #BeachLife #IlocosSur #Travel</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Local Products -->
+  <section>
+    <h2>Locale Products</h2>
+
+    <!-- Feature Presentation card -->
+    <div class="card">
+      <img src="assets/featureilocos.jpg" alt="Featured Products">
+      <h3>Ilocos Delicacies & Heritage Products</h3>
+      <p>Ilocos Sur is famous for its flavorful delicacies and unique cultural products. From Vigan longganisa, empanada, and bagnet to sweet treats like tinubong, peanut brittle, and calamay, each item reflects Ilocano tradition. Iconic burnay jars and sukang Iloko also highlight the craftsmanship and culinary heritage of the province.</p>
+    </div>
+
+    <!-- Product Grid (12 products) -->
+    <!--
+      Each card has:
+      - data-id for JS to know which product is clicked.
+      - two buttons: Add and Remove. 
+        Remove button has class hidden so CSS can hide it first.
+        In JS you can swap classes to show/hide and count items in the cart.
+    -->
+    <div class="product-grid">
+      <div class="card product" data-id="1">
+        <img src="assets/viganlongganisa.webp" alt="Product 1">
+        <h4>Vigan Longganisa</h4>
+        <p>₱120.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="2">
+        <img src="assets/chicharon.webp" alt="Product 2">
+        <h4>Chichacorn</h4>
+        <p>₱90.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="3">
+        <img src="assets/empanada.jpg" alt="Product 3">
+        <h4>Empanada</h4>
+        <p>₱100.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="4">
+        <img src="assets/balikutsa.jpg" alt="Product 4">
+        <h4>Balikutsa</h4>
+        <p>₱114.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="5">
+        <img src="assets/bagnet.webp" alt="Product 5">
+        <h4>Bagnet</h4>
+        <p>₱300.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="6">
+        <img src="assets/calamay.jpg" alt="Product 6">
+        <h4>Calamay</h4>
+        <p>₱250.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="7">
+        <img src="assets/cornick.webp" alt="Product 7">
+        <h4>Cornick</h4>
+        <p>₱100.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="8">
+        <img src="assets/burnay.webp" alt="Product 8">
+        <h4>Ube Jam / Ube Halaya</h4>
+        <p>₱895.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="9">
+        <img src="assets/burnay.jpg" alt="Product 9">
+        <h4>Burnay Jars</h4>
+        <p>₱600.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="10">
+        <img src="assets/peanutbrittle.jpg" alt="Product 10">
+        <h4>Ilocos Peanut Brittle</h4>
+        <p>₱100.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="11">
+        <img src="assets/tinubong.jpg" alt="Product 11">
+        <h4>Tinubong</h4>
+        <p>₱60.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+
+      <div class="card product" data-id="12">
+        <img src="assets/sukangiloko.jpg" alt="Product 12">
+        <h4>Sukang Iloko</h4>
+        <p>₱100.00</p>
+        <button class="add">Add to Cart</button>
+        <button class="remove hidden">Remove</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer at bottom -->
+  <footer>
+    <p>© 2025 Ilocos Sur Website — Midterm Exam</p>
+    <!-- 
+      <span id="cart-count">0</span> shows how many items added. 
+      In JS you can update innerText of this span to show count live.
+    -->
+    <p>Cart: <span id="cart-count">0</span> items</p>
+  </footer>
+
+  <!-- connect our JS file for cart functions -->
+  <script src="js/script.js"></script>
+</body>
+</html>

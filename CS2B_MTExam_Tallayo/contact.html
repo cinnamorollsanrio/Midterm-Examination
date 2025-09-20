@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- makes page size fit to phone screen also -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Ilocos Sur</title>
+
+  <!-- connect our CSS design -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- get fonts from google so text looks nice -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap">
+</head>
+<body>
+
+  <!-- big picture on top of page -->
+  <div class="top-banner">
+    <img src="assets/cabugao.jpg" alt="Banner" />
+  </div>
+
+  <!-- header bar that stays on top when you scroll -->
+  <header>
+    <div class="container header-right">
+      <!-- our logo on the left, it is a link back to home -->
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Ilocos Sur Logo">
+        </a>
+        <h1 class="logo-text">Ilocos Sur</h1>
+      </div>
+
+      <!-- links on the right for going to other pages -->
+      <nav>
+        <!-- 
+        data-tooltip = text you see when mouse go on link. 
+        in CSS we use a::after {content: attr(data-tooltip)} to show this.
+        no javascript needed. 
+        -->
+        <a href="index.html" data-tooltip="Go back to Home Page">Home</a>
+
+        <!-- active class makes this link look different so you know what page you are on -->
+        <a class="active" href="contact.html" data-tooltip="Contact us for more info">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- small hero area just under header showing title and intro text -->
+  <section class="hero hero-small">
+    <div class="hero-content">
+      <h2>Contact Us</h2>
+      <!-- intro text. CSS makes it black on contact page -->
+      <p>We’d love to hear from you! Send us your questions or feedback.</p>
+    </div>
+  </section>
+
+  <!-- main content of contact page: form at left, profile at right -->
+  <main class="contact-layout">
+    <!-- box for form -->
+    <section class="card contact-main">
+      <h3>Get in Touch</h3>
+      <!-- 
+      form groups inputs together. 
+      required = browser will not let you send empty.
+      label for="id" makes click on label focus input.
+      -->
+      <form id="contactForm">
+        <label for="name">Name*</label>
+        <input id="name" type="text" placeholder="Your Name" required>
+
+        <label for="title">Title</label>
+        <input id="title" type="text" placeholder="Your Title">
+
+        <label for="message">Message*</label>
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+
+        <!-- button send the form. you can catch it in js if you want -->
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- box at right showing your photo and info -->
+    <aside class="card aside-profile">
+      <!-- CSS makes this image fixed 180x240 and crop to fit 3:4 ratio with object-fit:cover -->
+      <img src="assets/me.jpg" alt="Portrait" class="portrait">
+      <h4>Princess Mae Tallayo</h4>
+      <p>BSCS 2nd Year</p>
+      <p>Email: ninjasindhood@gmail.com</p>
+      <p>Phone: +63 9XX XXX XXXX</p>
+    </aside>
+  </main>
+
+  <!-- section with Google Maps showing where you are -->
+  <section class="map-section">
+    <h3>Visit Us</h3>
+    <!-- 
+    this is Google Maps inside an iframe (frame inside page). 
+    width="100%" makes it full width, height="300" sets height. 
+    allowfullscreen lets it go full screen. 
+    loading="lazy" means browser waits to load it until needed (faster).
+    -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.06673830359!2d120.388267!3d17.574668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z17KwMzQnMjguOCJOIDEyMMKwMjMnMTcuOCJF!5e0!3m2!1sen!2sph!4v1638958329"
+      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- footer text at bottom -->
+  <footer>
+    <p>© 2025 Ilocos Sur Tourism — Student Project</p>
+  </footer>
+
+  <!-- link to js file where you can add form handling -->
+  <script src="js/script.js"></script>
+</body>
+</html>
